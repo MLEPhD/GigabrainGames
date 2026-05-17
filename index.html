@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gigabrain Games</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+        :root {
+            --text-color: #e0e0e0; /* Heller Text für Dark Mode */
+            --bg-color: #121212; /* Dunkler Hintergrund, typisch für Gaming */
+            --primary-color: #00d2ff; /* Helles Cyan, hoher Kontrast auf Dunkel */
+            --focus-color: #ff007f; /* Neon Pink für Fokus */
+            --box-bg: #1e1e1e;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        :focus-visible { outline: 3px solid var(--focus-color); outline-offset: 3px; }
+        .skip-link { position: absolute; top: -50px; left: 0; background: var(--primary-color); color: #000; padding: 12px; font-weight: bold; text-decoration: none; transition: top 0.2s; z-index: 100; }
+        .skip-link:focus { top: 0; }
+
+        header { background-color: var(--box-bg); padding: 1rem 2rem; border-bottom: 2px solid #333; }
+        nav ul { list-style: none; padding: 0; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        nav a { color: var(--text-color); text-decoration: none; font-weight: bold; padding: 0.5rem; display: inline-block; }
+        nav a:hover, nav a[aria-current="page"] { color: var(--primary-color); text-decoration: underline; text-underline-offset: 6px; }
+
+        main { padding: 2rem; max-width: 900px; margin: 0 auto; min-height: 60vh; }
+        h1, h2, h3 { color: var(--primary-color); }
+        a { color: var(--primary-color); text-decoration: underline; }
+        a:hover { text-decoration: none; }
+
+        .btn { display: inline-block; background-color: var(--primary-color); color: #000; text-decoration: none; padding: 12px 24px; font-weight: bold; border-radius: 4px; min-height: 44px; min-width: 44px; text-align: center; }
+        .btn:hover { background-color: #00a8cc; }
+
+        footer { background-color: var(--box-bg); padding: 2rem; margin-top: 3rem; border-top: 2px solid #333; font-size: 0.9rem; }
+        .footer-links { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; list-style: none; padding: 0; margin-bottom: 1rem; }
+        .footer-links a { color: var(--text-color); }
+
+/* --- Hero Section (Verkaufsbereich) --- */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: var(--box-bg);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 2.5rem;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-bottom: 2rem;
+}
+
+.hero-content {
+    flex: 1 1 400px;
+}
+
+.hero-image {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: #cccccc; /* Guter Kontrast auf dunklem Hintergrund */
+    margin-bottom: 1.5rem;
+}
+
+.price-tag {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+/* Auffälliger Kaufen-Button */
+.btn-buy {
+    background-color: var(--focus-color); /* Neon Pink */
+    color: #000000; /* Schwarzer Text auf hellem Pink garantiert perfekten WCAG Kontrast */
+    font-size: 1.1rem;
+    padding: 14px 28px;
+    box-shadow: 0 4px 10px rgba(255, 0, 127, 0.4);
+}
+
+.btn-buy:hover {
+    background-color: #e60073;
+    color: #ffffff;
+}
+
+/* Sekundärer Button (z.B. für die Gratis-Version) */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 210, 255, 0.1);
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    color: #dddddd;
+}
+
+.features-list li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon-check {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <header>
+        <nav aria-label="Hauptnavigation">
+            <ul>
+                <!-- aria-current ändert sich je nach Seite -->
+                <li><a href="index.html" aria-current="page">Startseite</a></li>
+                <li><a href="about.html">Über uns</a></li>
+		<li><a href="barrierefreiheit.html">Barrierefreiheitserklärung</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        
+        <!-- Hero Section (Das Aushängeschild der Seite) -->
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title" style="margin-top: 0; color: #ffffff;">Brain Blast: Supporter Edition</h1><!--Headernummerierung für screenreader!-->
+                
+                <p class="hero-subtitle">Hol dir das ultimative Puzzle-RPG-Erlebnis. Unterstütze ein Solo-Entwicklerstudio aus Wien und sichere dir exklusive Inhalte sowie werbefreies Gameplay!</p>
+                
+                <div class="transaction-amount" aria-label="Preis: 14 Euro und 99 Cent">€ 14,99</div><!--Klare und kontrastreiche visuelle darstellung-->
+                
+                <div class="hero-actions">
+                    <!-- Haupt-Call-to-Action -->
+                    <a href="#checkout" class="btn btn-buy">Jetzt kaufen</a>
+                    <!-- Alternative für Free-to-Play Spieler -->
+                    <a href="#download" class="btn btn-secondary">Kostenlos spielen</a>
+                </div>
+                
+                <!-- Feature-Liste für schnelle visuelle Erfassung -->
+                <ul class="features-list" aria-label="Vorteile der Supporter Edition">
+                    <li><span class="icon-check" aria-hidden="true">✓</span> Keine Wartezeiten oder Werbung</li>
+                    <li><span class="icon-check" aria-hidden="true">✓</span> Exklusiver "Neon-Drache" Skin</li>
+                    <li><span class="icon-check" aria-hidden="true">✓</span> Digitaler Soundtrack inklusive</li>
+                </ul>
+            </div>
+            
+            <div class="hero-image"><!--Alt für WCAG 2.2 AA konformität-->
+                     <img src="images/BrainBlast.png" 
+                     alt="Cover Art von Brain Blast: Ein stilisiertes, leuchtendes Gehirn im Cyberpunk-Stil" 
+                     width="500" height="500">
+            </div>
+        </section>
+
+        <section aria-labelledby="about-game">
+            <h2 id="about-game">Darum wirst du es lieben</h2>
+            <p>Brain Blast kombiniert schnelles Match-3 Gameplay mit tiefgreifenden RPG-Mechaniken. Baue dein Deck auf, levele deine Charaktere und trete in Echtzeit gegen Spieler aus der ganzen Welt an!</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <nav aria-label="Rechtliche Navigation">
+            <ul class="footer-links">
+                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+                <li><a href="lizenzen.html">Medienlizenzen</a></li>
+            </ul>
+        </nav>
+        <p style="text-align: center;">&copy; 2026 Gigabrain Games. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+</html>

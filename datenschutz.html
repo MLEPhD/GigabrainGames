@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gigabrain Games</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+        :root {
+            --text-color: #e0e0e0; /* Heller Text für Dark Mode */
+            --bg-color: #121212; /* Dunkler Hintergrund, typisch für Gaming */
+            --primary-color: #00d2ff; /* Helles Cyan, hoher Kontrast auf Dunkel */
+            --focus-color: #ff007f; /* Neon Pink für Fokus */
+            --box-bg: #1e1e1e;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        :focus-visible { outline: 3px solid var(--focus-color); outline-offset: 3px; }
+        .skip-link { position: absolute; top: -50px; left: 0; background: var(--primary-color); color: #000; padding: 12px; font-weight: bold; text-decoration: none; transition: top 0.2s; z-index: 100; }
+        .skip-link:focus { top: 0; }
+
+        header { background-color: var(--box-bg); padding: 1rem 2rem; border-bottom: 2px solid #333; }
+        nav ul { list-style: none; padding: 0; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        nav a { color: var(--text-color); text-decoration: none; font-weight: bold; padding: 0.5rem; display: inline-block; }
+        nav a:hover, nav a[aria-current="page"] { color: var(--primary-color); text-decoration: underline; text-underline-offset: 6px; }
+
+        main { padding: 2rem; max-width: 900px; margin: 0 auto; min-height: 60vh; }
+        h1, h2, h3 { color: var(--primary-color); }
+        a { color: var(--primary-color); text-decoration: underline; }
+        a:hover { text-decoration: none; }
+
+        .btn { display: inline-block; background-color: var(--primary-color); color: #000; text-decoration: none; padding: 12px 24px; font-weight: bold; border-radius: 4px; min-height: 44px; min-width: 44px; text-align: center; }
+        .btn:hover { background-color: #00a8cc; }
+
+        footer { background-color: var(--box-bg); padding: 2rem; margin-top: 3rem; border-top: 2px solid #333; font-size: 0.9rem; }
+        .footer-links { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; list-style: none; padding: 0; margin-bottom: 1rem; }
+        .footer-links a { color: var(--text-color); }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <header>
+        <nav aria-label="Hauptnavigation">
+            <ul>
+                <!-- aria-current ändert sich je nach Seite -->
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="about.html">Über uns</a></li>
+		<li><a href="barrierefreiheit.html">Barrierefreiheitserklärung</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <h1>Datenschutzerklärung</h1><!--Vorlage der WKÖ-->
+        <p>Wir verarbeiten Ihre Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG). In diesen Datenschutzinformationen informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.<br>
+<br>
+Beim Besuch unserer Website wird Ihre <strong>IP-Adresse, Beginn und Ende der Sitzung für die Dauer dieser Sitzung erfasst</strong>. Dies ist erforderlich, da wir Sie sonst nicht mit unserem Host, <strong>Cloudflare</strong>, verbinden könnten und stellt damit ein berechtigtes Interesse i.S.v. Art 6 Abs 1 lit f DSGVO dar. Soweit im Folgenden nichts anderes geregelt wird, werden diese Daten von uns nicht weiterverarbeitet.</p>
+
+        <section aria-labelledby="data-collection">
+            <h2 id="data-collection">Kontakt mit uns</h2>
+            <p>Bei Kontaktaufnahme per E-Mail/Kontaktformular werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage sechs Monate bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+        </section>
+
+        <section aria-labelledby="game-data">
+            <h2 id="game-data">Datenerfassung im Spiel "Brain Blast"</h2>
+            <p>Da es sich um ein Spiel mit In-App Käufen handelt, werden bei der Nutzung des Spiels zur Zahlungsabwicklung und zur Speicherung des Spielfortschritts pseudonymisierte Daten gespeichert. <strong>Zahlungsdaten</strong> werden direkt von den jeweiligen <strong>Store-Anbietern</strong> verarbeitet und nicht mit uns geteilt.</p>
+        </section>
+
+        <section aria-labelledby="rights">
+            <h2 id="rights">Ihre Rechte</h2>
+            <p>Ihnen stehen grundsätzlich die Rechte auf <strong>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu</strong>. Bei Vermutung eines Verstoßes gegen die DSGVO hilft Ihnen in Österreich die Datenschutzbehörde (DSb).</p>
+        </section>
+    </main>
+
+    <footer>
+        <nav aria-label="Rechtliche Navigation">
+            <ul class="footer-links">
+                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="datenschutz.html" aria-current="page">Datenschutzerklärung</a></li>
+                <li><a href="lizenzen.html">Medienlizenzen</a></li>
+            </ul>
+        </nav>
+        <p style="text-align: center;">&copy; 2026 Gigabrain Games. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+</html>
